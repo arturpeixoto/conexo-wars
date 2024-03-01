@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Criar Novo Jogador{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Novo Jogador</title>
+</head>
+<body>
+    <h1>Criar Novo Jogador</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+{% endblock %}

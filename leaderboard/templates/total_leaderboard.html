@@ -1,0 +1,35 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Leaderboard</title>
+</head>
+<body>
+    <h1>Total Leaderboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Posição</th>
+                <th>Jogador</th>
+                <th>Pontuação Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in total_leaderboard %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ entry.player }}</td>
+                    <td>{{ entry.total_score }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}
