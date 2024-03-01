@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Seu Título Padrão Aqui{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'leaderboard:total_leaderboard' %}">Home</a></li>
+            <li><a href="{% url 'leaderboard:daily_leaderboard' %}">Leaderboard Diário</a></li>
+            {% if user.is_authenticated %}
+            <li>Olá, {{ user.username }}</li>
+            <li><a href="{% url 'leaderboard:create_player' %}">Criar Jogador</a></li>
+            <li><a href="{% url 'leaderboard:create_game' %}">Registrar Partida</a></li>
+                <li><a href="{% url 'login:logout' %}">Desconectar</a></li>
+            {% else %}
+                <li><a href="{% url 'login:login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

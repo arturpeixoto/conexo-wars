@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Daily Leaderboard{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Leaderboard</title>
+</head>
+<body>
+    <h1>Daily Leaderboard</h1>
+    <ul>
+        {% for date in dates_with_games %}
+            <li><a href="{% url 'leaderboard:daily_leaderboard_detail' date=date %}">{{ date }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}

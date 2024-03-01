@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar Pontuação Diária{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Pontuação Diária</title>
+</head>
+<body>
+    <h1>Registrar Pontuação Diária</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+{% endblock %}

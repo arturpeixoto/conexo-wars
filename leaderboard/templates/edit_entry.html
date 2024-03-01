@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Entrada{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Entrada</title>
+</head>
+<body>
+    <h1>Editar Entrada</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Leaderboard Diário - {{ date }}{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Leaderboard - {{ date }}</title>
+</head>
+<body>
+    <h1>Daily Leaderboard - {{ date }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Jogador</th>
+                <th>Pontuação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in daily_leaderboard %}
+                <tr>
+                    <td>{{ entry.player.name }}</td>
+                    <td>{{ entry.score }}</td>
+                    <td>
+                        <td>
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'leaderboard:edit_entry' entry.id %}">Editar</a>
+                                <a href="{% url 'leaderboard:delete_entry' entry.id %}">Excluir</a>
+                            {% endif %}
+                        </td>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}
