@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/create_game.css' %}">
+{% endblock %}
+
 {% block title %}Registrar Pontuação Diária{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registrar Pontuação Diária</title>
-</head>
-<body>
+<div class="daily-score-form">
     <h1>Registrar Pontuação Diária</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Enviar</button>
     </form>
-</body>
-</html>
+</div>
 {% endblock %}
