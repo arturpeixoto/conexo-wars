@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.edit-btn {
+  color: #007bff; /* Azul para o botão de editar */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.edit-btn:hover {
+  color: #0056b3; /* Cor de hover para o botão de editar */
+}
+
+.delete-btn {
+  color: #dc3545; /* Vermelho para o botão de excluir */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #c82333; /* Cor de hover para o botão de excluir */
+}

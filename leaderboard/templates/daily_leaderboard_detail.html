@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Leaderboard Diário - {{ date }}{% endblock %}
 
 {% block content %}
@@ -8,6 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Daily Leaderboard - {{ date }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/daily_leaderboard_details.css' %}">
 </head>
 <body>
     <h1>Daily Leaderboard - {{ date }}</h1>
@@ -25,12 +28,10 @@
                     <td>{{ entry.player.name }}</td>
                     <td>{{ entry.score }}</td>
                     <td>
-                        <td>
-                            {% if request.user.is_authenticated %}
-                                <a href="{% url 'leaderboard:edit_entry' entry.id %}">Editar</a>
-                                <a href="{% url 'leaderboard:delete_entry' entry.id %}">Excluir</a>
-                            {% endif %}
-                        </td>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'leaderboard:edit_entry' entry.id %}" class="edit-btn">Editar</a>
+                            <a href="{% url 'leaderboard:delete_entry' entry.id %}" class="delete-btn">Excluir</a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
