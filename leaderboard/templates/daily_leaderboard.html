@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Classificação Diária{% endblock %}
 
 {% block content %}
 <body>
     <h1>Classificação Diária</h1>
-    <ul>
+    <ul class="daily-leaderboard-list">
         {% for date in dates_with_games %}
             <li><a href="{% url 'leaderboard:daily_leaderboard_detail' date=date %}">{{ date }}</a></li>
         {% endfor %}
     </ul>
 </body>
 </html>
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/daily_leaderboard.css' %}">
 {% endblock %}

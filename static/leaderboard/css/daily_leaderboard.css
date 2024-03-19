@@ -1,0 +1,25 @@
+.daily-leaderboard-list {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.daily-leaderboard-list li {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.daily-leaderboard-list li a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.daily-leaderboard-list li a:hover {
+  color: #0056b3;
+}
