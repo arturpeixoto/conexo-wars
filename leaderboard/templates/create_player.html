@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/create_player.css' %}">
+{% endblock %}
+
 {% block title %}Criar Novo Jogador{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Criar Novo Jogador</title>
-</head>
-<body>
+<div class="create-player-form">
     <h1>Criar Novo Jogador</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Enviar</button>
+        <button type="submit" class="submit-btn">Enviar</button>
     </form>
-</body>
-</html>
+</div>
 {% endblock %}

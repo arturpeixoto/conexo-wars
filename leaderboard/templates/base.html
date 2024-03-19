@@ -2,19 +2,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/leaderboard_styles.css' %}">
-    <meta charset="UTF-8">
-    <title>{% block title %}Seu Título Padrão Aqui{% endblock %}</title>
+    <head>
+        <link rel="stylesheet" href="{% static 'leaderboard/css/leaderboard_styles.css' %}">
+        <meta charset="UTF-8">
+        <title>{% block title %}Seu Título Padrão Aqui{% endblock %}</title>
+        {% block extracss %}
+        {% endblock%}
 </head>
 <body>
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <ul class="nav-links">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'leaderboard:total_leaderboard' %}">Classificação</a></li>
             <li><a href="{% url 'leaderboard:daily_leaderboard' %}">Leaderboard Diário</a></li>
             {% if user.is_authenticated %}
-            <li>Olá, {{ user.username }}</li>
+            <li class="user-greeting">Olá, {{ user.username }}</li>
             <li><a href="{% url 'leaderboard:create_player' %}">Criar Jogador</a></li>
             <li><a href="{% url 'leaderboard:create_game' %}">Registrar Partida</a></li>
                 <li><a href="{% url 'login:logout' %}">Desconectar</a></li>
