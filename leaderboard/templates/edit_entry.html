@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/edit_entry.css' %}">
+{% endblock %}
+
 {% block title %}Editar Entrada{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Editar Entrada</title>
-</head>
-<body>
+<div class="edit-entry-form">
     <h1>Editar Entrada</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Salvar</button>
+        <button type="submit" class="submit-btn">Salvar</button>
     </form>
-</body>
-</html>
+</div>
 {% endblock %}

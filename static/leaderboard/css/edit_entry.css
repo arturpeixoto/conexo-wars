@@ -1,0 +1,38 @@
+.edit-entry-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .edit-entry-form input,
+ .edit-entry-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+ }
+ 
+ .edit-entry-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ }
+ 
+ .edit-entry-form button:hover {
+  background-color: #0056b3;
+ }
+ 
+ .edit-entry-form button:focus {
+  outline: 2px solid #007bff;
+ }
+ 

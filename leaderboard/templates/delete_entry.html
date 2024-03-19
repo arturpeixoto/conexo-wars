@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Confirmação de Exclusão</title>
-</head>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboard/css/delete_entry.css' %}">
+{% endblock %}
+
+{% block title %}Confirmação de Exclusão{% endblock %}
+
+{% block content %}
 <body>
-    <h1>Confirmação de Exclusão</h1>
-    <p>Você tem certeza que deseja excluir a entrada de {{ entry.player.name }}?</p>
-    <p>Pontuação: {{entry.score}}</p>
-    <form action="{% url 'leaderboard:delete_entry' entry.id %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Confirmar Exclusão">
-    </form>
+    <div class="delete-confirmation">
+        <h1>Confirmação de Exclusão</h1>
+        <p>Você tem certeza que deseja excluir a entrada de {{ entry.player.name }}?</p>
+        <p>Pontuação: {{entry.score}}</p>
+        <form action="{% url 'leaderboard:delete_entry' entry.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Confirmar Exclusão" class="delete-btn">
+        </form>
+    </div>
 </body>
-</html>
+{% endblock %}

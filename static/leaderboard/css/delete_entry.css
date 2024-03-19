@@ -1,0 +1,37 @@
+.delete-confirmation {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.delete-confirmation h1 {
+  color: #515151;
+  margin-bottom: 20px;
+}
+
+.delete-confirmation p {
+  margin-bottom: 20px;
+}
+
+.delete-confirmation form {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Vermelho para o botão de confirmação de exclusão */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Cor de hover para o botão de confirmação de exclusão */
+}
